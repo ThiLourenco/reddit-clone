@@ -1,6 +1,6 @@
+import { ChakraProvider } from '@chakra-ui/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChakraProvider } from '@chakra-ui/core';
 import App from './app';
 
 
