@@ -10,6 +10,26 @@ const App = () =>  {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    // Hook to handle the real-time updating of post whenever this is a
+    // change in this datastore
+
+    db.collection('post')
+      .orderBy('createdAt', 'desc')
+      .onSnapshot((querySnapshot) => {
+        const _posts = [];
+
+        querySnapshot.forEach((doc) => {
+          _posts.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+
+        setPosts(_posts)
+      });
+  }, []);
+
+  useEffect(() => {
 
     // Hook to handle the initial fetching of posts
     db.collection('post')
@@ -34,6 +54,7 @@ const App = () =>  {
         ))}
       </VStack>
     </Container>
+    
   );
 };
 

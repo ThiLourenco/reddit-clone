@@ -23,7 +23,7 @@ const AddNewPost = () => {
   const [isSaving, setSaving] = useState(false);
 
   const handleSubmit = async () => {
-    const date = new date();
+    const date = new Date();
 
     await db.collection('post').add({
       title,
