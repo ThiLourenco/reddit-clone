@@ -25,7 +25,7 @@ const AddNewPost = () => {
   const handleSubmit = async () => {
     const date = new Date();
 
-    await db.collection('post').add({
+    await db.collection('posts').add({
       title,
       upVotesCount: 0,
       downVotes: 0,

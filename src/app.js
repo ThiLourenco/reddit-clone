@@ -10,10 +10,26 @@ const App = () =>  {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+
+    // Hook to handle the initial fetching of posts
+    db.collection('posts')
+      .orderBy('createdAt', 'desc')
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        console.log(data);
+        setPosts(data);
+      });
+  }, []);
+
+  useEffect(() => {
     // Hook to handle the real-time updating of post whenever this is a
     // change in this datastore
 
-    db.collection('post')
+    db.collection('posts')
       .orderBy('createdAt', 'desc')
       .onSnapshot((querySnapshot) => {
         const _posts = [];
@@ -26,22 +42,6 @@ const App = () =>  {
         });
 
         setPosts(_posts)
-      });
-  }, []);
-
-  useEffect(() => {
-
-    // Hook to handle the initial fetching of posts
-    db.collection('post')
-      .orderBy('createdAt', 'desc')
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        console.log(data);
-        setPosts(data);
       });
   }, []);
 
