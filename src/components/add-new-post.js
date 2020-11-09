@@ -28,7 +28,7 @@ const AddNewPost = () => {
     await db.collection('posts').add({
       title,
       upVotesCount: 0,
-      downVotes: 0,
+      downVotesCount: 0,
       createdAt: date.toUTCString(),
       updatedAt: date.toUTCString(),
     });
