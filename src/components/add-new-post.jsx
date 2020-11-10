@@ -39,14 +39,14 @@ const AddNewPost = () => {
 
   return (
     <>
+    
       <Button onClick={onOpen} colorScheme='blue'>
         Adicionar Postagem
-      </Button>
-
+      </Button> 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay>
           <ModalContent>
-            <ModalHeader>Criar postagem</ModalHeader>
+            <ModalHeader>Adicionar postagem</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <FormControl id='post-title'>

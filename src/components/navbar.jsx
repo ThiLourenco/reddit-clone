@@ -5,7 +5,7 @@ import AddNewPost from './add-new-post';
 
 const Navbar = () => {
   return (
-    <Box postiion='sticky' top={0} p={4} bg='gray.100' zIndex={1}>
+    <Box postiion='sticky' top={0} p={10} zIndex={1}>
       <Container maxW='md' centerContent>
         <Flex justifyContent='flex-end' w='100%' position='sticky' top={0}>
           <AddNewPost />

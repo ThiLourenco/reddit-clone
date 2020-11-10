@@ -62,7 +62,7 @@ const VoteButtons = ({ post }) => {
     // disabled the voting button once the voting is successful.
     handleDisablingOfVoting(post.id);
 
-    setVoting(true);
+    setVoting(false);
   };
 
   const checkIfPostIfAlreadyVoted = () => {

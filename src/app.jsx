@@ -1,4 +1,4 @@
-import { Container, Flex, Spinner, VStack } from '@chakra-ui/core';
+import { Container, VStack } from '@chakra-ui/core';
 import React, { useEffect, useState } from 'react';
 
 import Post from './components/post';
