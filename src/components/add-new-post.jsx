@@ -14,13 +14,13 @@ import {
   Textarea,
   } from '@chakra-ui/core';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import db from '../lib/firebase';
 
 const AddNewPost = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [title, setTitle] = useState('');
-  const [isSaving, setSaving] = useState(false);
+  const [isSaving] = useState(false);
 
   const handleSubmit = async () => {
     const date = new Date();
