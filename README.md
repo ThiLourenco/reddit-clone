@@ -3,7 +3,7 @@
 The project works in a similar way to reddit, the user creates a post and it can be voted on by others users.
 
 ### Deploy
-https://reddit01.vercel.app
+[Reddit-Clone](https://reddit01.vercel.app)
 
 ### Technologies
 
